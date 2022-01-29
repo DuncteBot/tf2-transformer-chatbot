@@ -6,10 +6,10 @@ from traceback import print_tb
 from helpers import create_table_if_not_exists, get_db_path, get_timeframe_path, format_data, \
     acceptable, get_timeframes
 
-timeframes = get_timeframes()[1]
+timeframes = get_timeframes()
 sql_transaction = []
-start_row = 0
-# start_row = 8400000  # that is where I stopped it last time
+# start_row = 0
+start_row = 145000000  # that is where I stopped it last time
 
 print(timeframes)
 

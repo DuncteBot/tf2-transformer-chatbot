@@ -17,15 +17,18 @@ def get_db_path(timeframe):
 
 def get_timeframes():
     timeframes = []
-    
+
     for f in os.listdir(data_path):
         if os.path.isfile(get_dataset_path(f)):
-            print(f)
+            print(f"Found: {f}")
             match = filename_regex.match(f)
             if match is not None:
                 timeframe = match.group(1)
                 timeframes.append(timeframe)
-            
+
+    # only pick the last one
+    timeframes = [timeframes[1]]
+
     return timeframes
 
 
